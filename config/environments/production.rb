@@ -3,7 +3,7 @@ Nomster::Application.configure do
     ActionMailer::Base.smtp_settings = {
     :port           => ENV['SMTP_PORT'],
     :address        => ENV['SMTP_SERVER'],
-    :user_name      => ENV['SMTP_LOGIN'],
+    :user_name      => ENV['SMTP_USERNAME'],
     :password       => ENV['SMTP_PASSWORD'],
     :domain         => 'nomster-george-welsted.herokuapp.com',
     :authentication => :plain,
