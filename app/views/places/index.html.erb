@@ -1,8 +1,18 @@
 <% @places.each do |place| %>
 	<div class="booyah-box col-xs-10 col-xs-offset-1">
 		<%= link_to place_path(place.id) do %>
-      <h1><%= place.name %></h1>
-    <% end %>    
+      <div class="col-xs-9"><h1><%= place.name %></h1></div>
+    <% end %>
+      	<% if place.photos.present? %>
+    <div class="col-xs-3">
+
+	      <% if place.photos.last.present? %>
+	        <%= image_tag place.photos.last.picture, class: "place_photo_sm pull-right" %>
+	      <% end %>
+
+	  </div>
+  	<% end %>
+  	<div class="clear"></div>    
 		
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p>
@@ -23,6 +33,8 @@
 	    </blockquote>
 	  </div>
   	<% end %>
+
+
 
 	</div>
 
